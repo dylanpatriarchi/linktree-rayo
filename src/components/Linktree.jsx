@@ -8,6 +8,10 @@ const Linktree = () => {
       url: 'https://www.rayo.consulting'
     },
     {
+      name: 'Newsletter',
+      url: 'https://www.rayo.consulting/newsletter'
+    },
+    {
       name: 'ManyChat',
       url: 'https://manychat.partnerlinks.io/v4am4l16sm57'
     },
