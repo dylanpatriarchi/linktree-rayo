@@ -1,80 +1,85 @@
 # Linktree Rayo - React
 
-Un elegante linktree creato con React, caratterizzato da uno sfondo nero, un alone arancione gradient in basso a sinistra e bottoni con effetto liquid glass.
+A modern and elegant linktree built with React, featuring a clean white background, subtle geometric watermark pattern, and a featured OpenGraph preview card.
 
-## 🎨 Caratteristiche
+## 🎨 Features
 
-- **Design moderno**: Sfondo nero elegante con accenti arancioni
-- **Effetto liquid glass**: Bottoni con effetto vetro smerigliato e backdrop-filter
-- **Alone arancione**: Gradiente arancione animato in basso a sinistra
-- **Responsive**: Ottimizzato per dispositivi mobili e desktop
-- **Animazioni fluide**: Transizioni e animazioni CSS moderne
+- **Modern Design**: Clean white background with orange accents
+- **Geometric Watermark**: Subtle pattern overlay for visual texture
+- **OpenGraph Preview**: Featured card with live website screenshot
+- **Lucide Icons**: Beautiful icons for each link
+- **Responsive**: Optimized for mobile and desktop devices
+- **Smooth Animations**: Modern CSS transitions and hover effects
 
-## 🚀 Installazione
+## 🚀 Installation
 
-1. Clona il repository:
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd linktree-rayo
 ```
 
-2. Installa le dipendenze:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Avvia il server di sviluppo:
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Apri il browser su `http://localhost:5173`
+4. Open your browser at `http://localhost:5173`
 
-## 🛠️ Personalizzazione
+## 🛠️ Customization
 
-### Modificare i link
-Apri `src/components/Linktree.jsx` e modifica l'array `links`:
+### Modify Links
+Open `src/components/Linktree.jsx` and edit the `links` array:
 
 ```javascript
 const links = [
   {
-    name: 'Il Tuo Nome',
-    url: 'https://tuosito.com',
-    icon: '🌐'
+    name: 'Your Name',
+    url: 'https://yoursite.com',
+    icon: Globe
   },
-  // Aggiungi altri link...
+  // Add more links...
 ];
 ```
 
-### Modificare i colori
-Modifica i colori nel file `src/components/Linktree.css`:
+### Modify Colors
+Edit colors in `src/components/Linktree.css`:
 
-- **Alone arancione**: Modifica i valori `rgba(255, 165, 0, ...)` 
-- **Sfondo**: Cambia `background: #000`
-- **Bottoni**: Modifica `rgba(255, 255, 255, 0.1)`
+- **Orange accent**: Change `rgba(255, 140, 0, ...)`
+- **Background**: Modify `background: #ffffff`
+- **Buttons**: Edit border and hover colors
+
+### Featured Card
+The first link in the array automatically becomes the featured card with OpenGraph preview. The preview is fetched dynamically using Microlink API.
 
 ## 📱 Responsive Design
 
-Il linktree è completamente responsive e si adatta automaticamente a:
+The linktree is fully responsive and adapts to:
 - Desktop (1200px+)
-- Tablet (768px - 1199px)  
-- Mobile (fino a 767px)
+- Tablet (768px - 1199px)
+- Mobile (up to 767px)
 
-## 🎯 Tecnologie Utilizzate
+## 🎯 Technologies Used
 
-- **React 18** - Framework JavaScript
-- **Vite** - Build tool veloce
-- **CSS3** - Stili avanzati con animazioni
-- **Backdrop-filter** - Effetto glassmorphism
+- **React 18** - JavaScript framework
+- **Vite** - Fast build tool
+- **Lucide React** - Icon library
+- **CSS3** - Advanced styling with animations
+- **Microlink API** - OpenGraph preview generation
 
-## 📄 Licenza
+## 📄 License
 
-Questo progetto è open source e disponibile sotto licenza MIT.
+This project is open source and available under the MIT License.
 
-## 🤝 Contributi
+## 🤝 Contributing
 
-Le pull request sono benvenute! Per modifiche importanti, apri prima una issue per discutere cosa vorresti cambiare.
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
-Creato con ❤️ e React
+Built with ❤️ and React
