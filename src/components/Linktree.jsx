@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, MessageSquare, Workflow, Sparkles } from 'lucide-react';
+import { Globe, MessageSquare, Workflow, Sparkles, Calculator, Mail } from 'lucide-react';
 import './Linktree.css';
 
 // --- Configuration ---
@@ -17,9 +17,14 @@ const links = [
     icon: Globe,
   },
   {
-    name: 'Come costruire AI Agents con Python e pgsql',
-    url: 'https://gold-soup-d28.notion.site/Guida-allo-Sviluppo-di-AI-Agents-Sicuri-con-Python-e-PostgreSQL-2a5f81b36ffa80789c88d5ddca6ec7d3?pvs=73',
-    icon: Sparkles,
+    name: 'Quanto perdi non implementando l\'ai?',
+    url: 'https://aicalculator.rayo.consulting/',
+    icon: Calculator,
+  },
+  {
+    name: 'Newsletter',
+    url: 'https://newsletter.rayo.consulting/',
+    icon: Mail,
   },
   {
     name: 'ManyChat',
