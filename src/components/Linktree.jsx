@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, MessageSquare, Workflow, Calculator, Mail, ArrowUpRight, FileText, X } from 'lucide-react';
+import { Globe, MessageSquare, Workflow, Calculator, Mail, ArrowUpRight, FileText } from 'lucide-react';
 import LegalModal, { PrivacyContent, CookieContent } from './LegalModal';
-import './Linktree.css';
 
 // --- Configuration ---
 const profile = {
   name: 'Rayo Consulting',
   bio: 'Tutti i nostri link, a portata di mano. Scopri i nostri servizi di consulenza e automazione.',
-  imageUrl: '/logo.png', 
+  imageUrl: '/logo.svg',
 };
 
 const links = [
@@ -61,26 +60,21 @@ const CookieBanner = ({ onOpenPolicy }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="cookie-banner">
-      <div className="cookie-content">
-        <p>
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 z-50">
+      <div className="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-secondary text-center sm:text-left">
           Utilizziamo i cookie per migliorare la tua esperienza. Continuando a navigare accetti la nostra{' '}
-          <button 
-            onClick={onOpenPolicy} 
-            style={{
-              background: 'none', 
-              border: 'none', 
-              padding: 0, 
-              color: 'inherit', 
-              textDecoration: 'underline', 
-              cursor: 'pointer',
-              font: 'inherit'
-            }}
+          <button
+            onClick={onOpenPolicy}
+            className="text-dark underline hover:text-primary transition-colors"
           >
             Cookie Policy
           </button>.
         </p>
-        <button onClick={acceptCookies} className="cookie-btn">
+        <button
+          onClick={acceptCookies}
+          className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-medium hover:opacity-90 active:scale-95 transition-all"
+        >
           Accetta
         </button>
       </div>
@@ -106,84 +100,97 @@ const Linktree = () => {
   };
 
   return (
-    <div className="page-wrapper">
-      <div className="linktree-container">
-        {/* Profile Section */}
-        <header className="profile-section">
-          <div className="brand-label">( 00-01 ) • Link</div>
-          <img
-            src={profile.imageUrl}
-            alt="Profile"
-            className="profile-picture"
-          />
-          <div className="profile-content">
-            <h1 className="profile-name">{profile.name}</h1>
-            <p className="profile-bio">{profile.bio}</p>
-          </div>
-        </header>
+    <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-primary/20">
+      {/* Header / Nav */}
+      <header className="fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-sm z-40 flex items-center justify-center border-b border-transparent hover:border-gray-100 transition-colors">
+        <img src={profile.imageUrl} alt="Rayo Consulting" className="h-8 w-auto grayscale brightness-0" />
+      </header>
 
-        {/* Links Section */}
-        <main className="links-section">
-          {links.map((link, index) => {
-            const IconComponent = link.icon;
-            return (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-card"
-              >
-                <div className="link-content">
-                  <div className="link-icon-wrapper">
-                    <IconComponent size={20} />
+      <div className="flex-grow pt-24 pb-12 px-6">
+        <div className="max-w-xl mx-auto text-center">
+          {/* Profile Section */}
+          <div className="mb-12">
+            <h1 className="text-4xl sm:text-5xl font-bold text-dark mb-4 tracking-tight">
+              {profile.name}
+            </h1>
+            <p className="text-secondary text-lg max-w-md mx-auto leading-relaxed">
+              {profile.bio}
+            </p>
+          </div>
+
+          {/* Links Section */}
+          <div className="space-y-4">
+            {links.map((link, index) => {
+              const IconComponent = link.icon;
+              return (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between bg-primary text-white p-4 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all shadow-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="bg-white/10 p-2 rounded-md group-hover:bg-white/20 transition-colors">
+                      <IconComponent size={20} />
+                    </div>
+                    <span className="font-medium text-lg">{link.name}</span>
                   </div>
-                  <span className="link-text">{link.name}</span>
-                </div>
-                <ArrowUpRight className="link-arrow" size={20} />
-              </a>
-            );
-          })}
-        </main>
+                  <ArrowUpRight className="opacity-60 group-hover:opacity-100 transition-opacity" size={20} />
+                </a>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Full Width Footer */}
-      <footer className="footer-expanded">
-        <div className="footer-container">
-          <div className="footer-main-row">
-            <div className="footer-brand-section">
-              <span className="footer-label">AI Agency</span>
-              <h2 className="footer-logo">Rayo.</h2>
-              <div className="footer-contact">
-                <p className="contact-number">+39 327 174 6038</p>
-                <a href="mailto:info@rayo.consulting" className="contact-email">info@rayo.consulting</a>
-              </div>
+      {/* Footer */}
+      <footer className="mt-auto border-t border-gray-100 py-12 px-6 bg-white">
+        <div className="max-w-xl mx-auto space-y-8">
+          <div className="flex flex-col items-center text-center space-y-4">
+            <img src={profile.imageUrl} alt="Rayo Consulting" className="h-6 w-auto grayscale brightness-0 opacity-50" />
+
+            <div className="space-y-2 text-xs text-secondary uppercase tracking-widest">
+              <p className="font-bold text-dark opacity-100">Rayo Consulting di Patriarchi Dylan</p>
+              <p>P.IVA: 03988190546</p>
             </div>
           </div>
 
-          <div className="footer-bottom">
-            <p className="company-info">Rayo Consulting di Patriarchi Dylan, <strong>IT03988190546</strong></p>
-            <div className="footer-legal">
-              <a href="#" onClick={openPrivacy}>Privacy Policy</a>
-              <a href="#" onClick={openCookie}>Cookie Policy</a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-xs text-secondary">
+            <div className="space-y-1 text-center sm:text-left">
+              <p className="font-bold text-dark uppercase tracking-wider mb-2">Sedi</p>
+              <p>Vocabolo Marcheggiane 56/C</p>
+              <p>Breccione Zona Industriale</p>
+              <p>Città di Castello (PG)</p>
+            </div>
+            <div className="space-y-1 text-center sm:text-right flex flex-col sm:items-end">
+              <p className="font-bold text-dark uppercase tracking-wider mb-2">Contatti</p>
+              <a href="mailto:info@rayo.consulting" className="hover:text-primary transition-colors">
+                info@rayo.consulting
+              </a>
+              <div className="pt-4 flex items-center justify-center sm:justify-end gap-4">
+                <a href="#" onClick={openPrivacy} className="hover:text-primary transition-colors">Privacy Policy</a>
+                <span className="opacity-30">•</span>
+                <a href="#" onClick={openCookie} className="hover:text-primary transition-colors">Cookie Policy</a>
+              </div>
             </div>
           </div>
         </div>
       </footer>
-      
+
       <CookieBanner onOpenPolicy={openCookie} />
-      
-      <LegalModal 
-        isOpen={activeModal === 'privacy'} 
-        onClose={closeModal} 
+
+      <LegalModal
+        isOpen={activeModal === 'privacy'}
+        onClose={closeModal}
         title="Privacy Policy"
       >
         <PrivacyContent />
       </LegalModal>
 
-      <LegalModal 
-        isOpen={activeModal === 'cookie'} 
-        onClose={closeModal} 
+      <LegalModal
+        isOpen={activeModal === 'cookie'}
+        onClose={closeModal}
         title="Cookie Policy"
       >
         <CookieContent />

@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 import Linktree from './components/Linktree';
 
 function App() {
   return (
-    <div className="App">
+    <div className="min-h-screen">
       <Linktree />
     </div>
   );
