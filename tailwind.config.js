@@ -7,12 +7,12 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#3B82F6",
+                primary: "#0047ff",
                 secondary: "#6B7280",
                 dark: "#000000",
             },
             fontFamily: {
-                sans: ["Inter", "Helvetica Now Display", "Helvetica", "Arial", "sans-serif"],
+                sans: ["Helvetica Now Display", "Helvetica", "Arial", "sans-serif"],
             },
         },
     },
